@@ -4,19 +4,18 @@
     "start": "gulp && ./node_modules/http-server/bin/http-server"
   },
   "dependencies": {
-    "http-server": "^0.6.1"
+    "http-server": "^0.12.3"
   },
   "repository": {
     "type": "git",
     "url": "http://github.com/piatra/kreator.js"
   },
   "devDependencies": {
-    "gulp": "^3.5.5",
+    "browserify": "^16.5.2",
+    "gulp": "^4.0.2",
     "gulp-pug": "^4.0.1",
-    "gulp-browserify": "^0.4.6",
-    "gulp-stylus": "0.0.13",
-    "quilljs": "*",
-    "browserify": "*",
-    "mold-source-map": "*"
+    "gulp-stylus": "^2.7.0",
+    "mold-source-map": "*",
+    "quilljs": "*"
   }
 }

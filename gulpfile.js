@@ -1,6 +1,5 @@
-var gulp = require('gulp');
-
 var browserify = require('browserify');
+var gulp = require('gulp');
 var pug = require('gulp-pug');
 var stylus = require('gulp-stylus');
 var fs = require('fs');
@@ -21,12 +20,27 @@ var paths = {
 	}
 };
 
-gulp.task('browserify', function(){
-    browserify(paths.js.in, {debug: true})
-    .bundle()
-    .pipe(mold.transformSourcesRelativeTo(__dirname))
-    .pipe(fs.createWriteStream(paths.js.out));
-});
+//gulp.task('browserify', function(){
+//    browserify(paths.js.in, {debug: true})
+//    .bundle()
+//    .pipe(mold.transformSourcesRelativeTo(__dirname))
+//    .pipe(fs.createWriteStream(paths.js.out));
+//});
+
+gulp.task('browserify', function () {
+    var b = browserify({
+        entries: paths.js.in,
+        debug: true,
+//        transform: [vueify, babelify.configure({presets: ["es2015"]})]
+    });
+    return b.bundle()
+//        .pipe(source('build.js'))
+//        .pipe(buffer())
+//        .on('error', gutil.log)
+//        .pipe(gulp.dest('./dist/'));
+		.pipe(mold.transformSourcesRelativeTo(__dirname))
+		.pipe(fs.createWriteStream(paths.js.out));
+    });
 
 gulp.task('build-css', function(){
 	return gulp.src(paths.css.in)
