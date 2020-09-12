@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
 var browserify = require('browserify');
-var jade = require('gulp-jade');
+var pug = require('gulp-pug');
 var stylus = require('gulp-stylus');
 var fs = require('fs');
 var mold = require('mold-source-map');
@@ -16,7 +16,7 @@ var paths = {
 		out: './css'
 	},
 	html: {
-		in: ['./views/*.jade'],
+		in: ['./views/*.pug'],
 		out: './output'
 	}
 };
@@ -38,7 +38,7 @@ gulp.task('build-css', function(){
 
 gulp.task('build-html', function(){
 	return gulp.src(paths.html.in)
-	.pipe(jade({pretty: true}))
+	.pipe(pug({pretty: true}))
 	.pipe(gulp.dest(paths.html.out));
 });
 
