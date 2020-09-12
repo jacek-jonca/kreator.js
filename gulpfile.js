@@ -62,4 +62,5 @@ gulp.task('watch', function() {
 	gulp.watch(paths.html.in, ['build-html']);
 });
 
-gulp.task('default', ['browserify', 'build-html', 'build-css']);
+//gulp.task('default', ['browserify', 'build-html', 'build-css']);
+gulp.task('default', gulp.series('browserify', 'build-html', 'build-css'));

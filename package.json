@@ -4,11 +4,13 @@
     "start": "gulp && ./node_modules/http-server/bin/http-server"
   },
   "dependencies": {
-    "http-server": "^0.12.3"
+    "core-js": "3.6.5",
+    "fsevents": "2.1.3",
+    "http-server": "0.12.3"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/piatra/kreator.js"
+    "url": "http://github.com/jacek-jonca/kreator.js"
   },
   "devDependencies": {
     "browserify": "^16.5.2",
